@@ -1,71 +1,61 @@
-# 🏎️ ThrottleX – Spring Boot Backend
+# 🚀 ThrottleX
 
-**ThrottleX** is a Spring Boot backend project that provides **secure user authentication, user management, and RESTful APIs** for web or mobile applications. It uses **JWT-based authentication**, integrates with **MySQL**, and follows best practices for scalable backend development.
+**ThrottleX** is a Spring Boot backend application that provides secure user authentication, user management, and scalable RESTful APIs for web or mobile applications. It uses **JWT-based authentication**, integrates with **MySQL**, and follows clean architecture best practices.
 
 ---
 
-## 🚀 Features
+## 🔧 Features
 
-- 🔐 **JWT-based Authentication** for secure login and sessions  
-- 👥 **User Management** (Create, Read, Update, Delete)  
-- 🗄️ **MySQL Database Integration** for persistent storage  
-- ⚡ **Clean Spring Boot Architecture** with layered structure  
-- ☁️ Ready for **cloud deployment** (AWS, Heroku, DigitalOcean)  
+- ✅ JWT-based Authentication (Login & Token Management)  
+- 👤 User Management (Create, Read, Update, Delete)  
+- 🗄️ MySQL Database Integration  
+- 📦 Clean Spring Boot Architecture  
+- ☁️ Ready for cloud deployment (AWS, Heroku, DigitalOcean)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Java 17, Spring Boot  
-- **Database:** MySQL  
-- **Authentication:** JWT (JSON Web Tokens)  
-- **Build Tool:** Maven  
-- **Dependencies:** Spring Security, Spring Data JPA, Lombok  
+| Component        | Technology           |
+|------------------|--------------------|
+| Backend          | Java 17, Spring Boot |
+| Database         | MySQL              |
+| Authentication   | JWT (JSON Web Token) |
+| Build Tool       | Maven              |
+| Frontend (if any)| HTML/CSS/JS        |
 
 ---
 
-## 📝 Prerequisites
+## 🧪 API Endpoints
 
-Before running the project, ensure you have:  
+*(Add or update based on your project)*
 
-- Java JDK 17  
-- Maven 3.x  
-- MySQL Server  
-- IDE (IntelliJ IDEA / Eclipse recommended)  
-- Git  
+- `POST /api/auth/login` – Login user  
+- `POST /api/auth/register` – Register new user  
+- `GET /api/users` – List all users  
+- `GET /api/users/{id}` – Get user by ID  
+- `PUT /api/users/{id}` – Update user  
+- `DELETE /api/users/{id}` – Delete user
 
 ---
 
-## ⚡ Project Setup
+## 📌 Contributing
 
-### 1️⃣ Clone the repository
+1. Fork the repository  
+2. Create your feature branch: `git checkout -b feature/YourFeature`  
+3. Commit your changes: `git commit -m "Add awesome feature"`  
+4. Push to the branch: `git push origin feature/YourFeature`  
+5. Open a Pull Request
 
-```bash
-git clone https://github.com/<your-username>/ThrottleX.git
-cd ThrottleX
+---
 
-2️⃣ Configure MySQL
+## ⭐ Support
 
-Create a MySQL database:
+If you find this project useful, please ⭐ star the repo!
 
-CREATE DATABASE throttlex_db;
+---
 
+## 📝 License
 
-Update src/main/resources/application.properties with your MySQL credentials:
+This project is open-source and available under the **MIT License**.
 
-# MySQL Database Configuration
-spring.datasource.url=jdbc:mysql://localhost:3306/throttlex_db
-spring.datasource.username=YOUR_DB_USERNAME
-spring.datasource.password=YOUR_DB_PASSWORD
-spring.jpa.hibernate.ddl-auto=update
-
-# Hibernate SQL Logging (optional)
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.format_sql=true
-
-# Server port
-server.port=8080
-
-# JWT Configuration
-jwt.secret=YOUR_SECRET_KEY
-jwt.expiration=3600000
