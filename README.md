@@ -65,25 +65,25 @@ ThrottleX solves this by acting as a **centralized API Gateway** that:
 
 ## 🧠 System Architecture
 
+```text
 Client
   |
   v
 [ Load Balancer ]
   |
   v
-+------------------------+
-|  ThrottleX API Gateway |
-|  - Request Routing    |
-|  - Rate Limiting      |
-+-----------+------------+
-            |
-            v
-      Redis (Token Bucket)
-            |
-            v
++----------------------------+
+|   ThrottleX API Gateway    |
+|   - Request Routing        |
+|   - Rate Limiting          |
++------------+---------------+
+             |
+             v
+       Redis (Token Bucket)
+             |
+             v
 [ Backend Services / APIs ]
-
-
+```
 ### Architecture Highlights
 - Every request passes through ThrottleX before reaching backend services
 - Redis maintains token counts per client or API key
@@ -128,6 +128,7 @@ Client
 
 ## 📁 Project Structure
 
+```text
 ThrottleX/
 ├── src/
 │   └── main/
@@ -140,14 +141,14 @@ ThrottleX/
 │       │   ├── service/
 │       │   │   └── RateLimiterService.java   # Token Bucket rate limiting logic
 │       │   ├── util/
-│       │   │   └── TokenBucket.java           # Rate limiting implementation
+│       │   │   └── TokenBucket.java          # Rate limiting implementation
 │       │   └── ThrottleXApplication.java     # Spring Boot application entry point
 │       │
 │       └── resources/
 │           └── application.yml               # Application configuration
 │
-└── pom.xml                                   # Maven dependencies & build config
-
+└── pom.xml                                   # Maven dependencies & build configuration
+```
 ---
 
 ## 🎯 Use Cases
