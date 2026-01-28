@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: throttlex-spring-backend
+
+throttlex:
+  jwt:
+    # Keep this in sync with your Node .env JWT_SECRET
+    secret: supersecretkey_supersecretkey_supersecret
+    expiration: 3600 # seconds
+
+  rate-limit:
+    requests: 5
+    window-seconds: 60
+

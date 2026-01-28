@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>ThrottleX Console</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="app">
+    <header class="app-header">
+        <h1>ThrottleX Console</h1>
+        <p>Simple, focused UI for testing the API gateway.</p>
+    </header>
+
+    <main class="layout">
+        <section class="panel">
+            <h2>1. Generate Token</h2>
+            <label class="field">
+                <span>Role</span>
+                <select id="role">
+                    <option value="free">free</option>
+                    <option value="premium">premium</option>
+                </select>
+            </label>
+            <button id="generateTokenBtn">Generate</button>
+            <textarea id="tokenOutput" class="output" readonly></textarea>
+        </section>
+
+        <section class="panel">
+            <h2>2. Call Protected Endpoint</h2>
+            <label class="field">
+                <span>Token</span>
+                <textarea id="tokenInput" rows="4" class="mono"></textarea>
+            </label>
+            <button id="callProtectedBtn">Call /protected</button>
+            <textarea id="protectedOutput" class="output" readonly></textarea>
+        </section>
+
+        <section class="panel">
+            <h2>3. Proxy Request</h2>
+            <label class="field">
+                <span>Target URL</span>
+                <input id="targetUrl" type="url" placeholder="https://httpbin.org/get" />
+            </label>
+            <label class="field">
+                <span>Method</span>
+                <select id="proxyMethod">
+                    <option>GET</option>
+                    <option>POST</option>
+                    <option>PUT</option>
+                    <option>DELETE</option>
+                </select>
+            </label>
+            <label class="field">
+                <span>Body (JSON)</span>
+                <textarea id="proxyBody" rows="4" class="mono"></textarea>
+            </label>
+            <button id="proxyBtn">Send via Gateway</button>
+            <textarea id="proxyOutput" class="output" readonly></textarea>
+        </section>
+    </main>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
+
